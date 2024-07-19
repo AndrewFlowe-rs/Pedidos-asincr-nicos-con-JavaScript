@@ -6,20 +6,9 @@ var corsOptions = {
   origin: "*"
 };
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-
+app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
 
-app.set('views', path.join(__dirname, 'views'));
-
-const otherRouter = require('./routes/other.routes');
-const formRouter = require('./routes/formulario.routes');
-const favRoutes = require('./routes/favoritas.routes');
-
-app.use ('/home', otherRouter);
-app.use ('/form', formRouter);
-app.use ('/fav', favRoutes);
 
 app.use(cors(corsOptions));
 let allowCrossDomain = function(req, res, next) {
@@ -41,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 
+const otherRouter = require('./routes/other.routes')
 
 //Aquí llamo a la ruta de las api de movies
 const apiMoviesRouter = require('./routes/api/movies')
@@ -52,6 +42,8 @@ const apiActorsRouter = require('./routes/api/actors')
 
 app.use(express.static(path.resolve(__dirname, '../public')));
 
+app.use('/', otherRouter)
+app.use('/formulario', otherRouter)
 
 //Aquí creo la colección de mis recursos de movies (APIs)
 app.use('/api/movies',apiMoviesRouter);

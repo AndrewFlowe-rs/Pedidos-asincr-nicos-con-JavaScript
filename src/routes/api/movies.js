@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const moviesAPIController = require('../../controllers/api/moviesAPIController');
 
+
 //Rutas
 //Listado de películas
-router.get('/', moviesAPIController.list);
+router.get('/', moviesAPIController.list );
 //Detalle de una película
 router.get('/:id', moviesAPIController.detail);
 //Filtrar películas por rating. Puede colocar desde 1 hasta 10

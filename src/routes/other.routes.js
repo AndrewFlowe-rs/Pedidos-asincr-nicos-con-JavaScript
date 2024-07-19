@@ -1,7 +1,9 @@
-const express = require('express');
-const router = express.Router();
-const indexController = require('../controllers/vistas/otherController');
-const movieApi = require('../controllers/api/moviesAPIController');
-router.get('/', indexController.home);
+const router = require('express').Router();
+const { home, form, update } = require('../controllers/other')
+
+router.get('/', home)
+router.get('/:id', form)
+router.put('/update/:id', update);
 
 module.exports = router
+
