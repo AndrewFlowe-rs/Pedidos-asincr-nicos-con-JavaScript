@@ -5,10 +5,14 @@ window.onload = () => {
   app.appendChild(container);
 
   // Aqui debemos agregar nuestro fetch
+  fetch("http://localhost:3031/api/movies")
+  .then((response) => response.json()).then(function(peliculas) {
+    console.log(peliculas);
+  })
 
 
 
-  /** Codigo que debemos usar para mostrar los datos en el frontend
+  // Codigo que debemos usar para mostrar los datos en el frontend
     let data = peliculas.data;
 
     data.forEach((movie) => {
@@ -34,5 +38,5 @@ window.onload = () => {
       }
       card.appendChild(duracion);
     });
-  */
+  
 };
