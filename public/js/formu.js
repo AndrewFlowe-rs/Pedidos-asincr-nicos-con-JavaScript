@@ -7,7 +7,7 @@ window.addEventListener('load', async function() {
         const release_date = document.querySelector('#release_date');
         const length = document.querySelector('#length');
         const genre = document.querySelector('#genre');
-        const formulario = document.querySelector('.formulario')
+        const formu = document.querySelector('.formulario')
 
         const editButton = document.querySelector('.botonAgregar');
         const createButton = document.querySelector('.botonModificar');
@@ -19,7 +19,7 @@ window.addEventListener('load', async function() {
         
         const query = new URLSearchParams(location.search);
             
-        formulario.addEventListener('submit', function(e) {
+        formu.addEventListener('submit', function(e) {
             e.preventDefault()
         })
         
