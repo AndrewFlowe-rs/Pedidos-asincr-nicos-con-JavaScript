@@ -1,9 +1,10 @@
+const { home, moviesForm, moviesFavorites } = require('../controllers/other');
+
 const router = require('express').Router();
-const { home, form, update } = require('../controllers/other')
 
-router.get('/', home)
-router.get('/:id', form)
-router.put('/update/:id', update);
+router.get('/', home);
+router.get('/formulario', moviesForm);
+router.get('/favoritas', moviesFavorites);
 
-module.exports = router
 
+module.exports = router;

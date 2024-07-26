@@ -39,7 +39,9 @@ module.exports = (sequelize, dataTypes) => {
     Movie.associate = function (models) {
         Movie.belongsTo(models.Genre, { // models.Genre -> Genres es el valor de alias en genres.js
             as: "genre",
-            foreignKey: "genre_id"
+            foreignKey: "genre_id",
+            onUpdate: 'cascade',
+            onDelete: 'cascade',
         })
 
         Movie.belongsToMany(models.Actor, { // models.Actor -> Actors es el valor de alias en actor.js

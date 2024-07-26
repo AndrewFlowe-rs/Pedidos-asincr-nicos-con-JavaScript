@@ -1,5 +1,5 @@
 module.exports = {
-    home : require ('./home.controller.js.js'),
-    form : require ('./form.controller.js.js'),
-    update : require ('./update.controller.js')
-}
+    home: require('./home.controller.js'),
+    moviesForm: require('./moviesForm.controller.js'),
+    moviesFavorites: require('./favorites.controller'),
+};
